@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>Link Masking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f0f0f0;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    a {
+      font-size: 1.2rem;
+      color: #007acc;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Link Masking</h2>
+  <a id="shownLink" href="#" onclick="redirectToActual(event)">https://example.com/display-link</a>
+
+  <script>
+    const actualRedirectUrl = "https://othersite.com/redirect-here";
+
+    function redirectToActual(event) {
+      event.preventDefault();  // ডিফল্ট লিংক ক্লিক বন্ধ করে
+      window.location.href = actualRedirectUrl;  // অন্য লিংকে নিয়ে যায়
+    }
+  </script>
+</body>
+</html>
